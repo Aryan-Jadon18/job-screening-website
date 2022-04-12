@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="custom.js">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link href="resume formfill.html">
+    <style>
+        body{
+            margin:0px;
+            background: url('https://pin.it/3jYdUsZ') no-repeat;
+        }
+        #main{
+            width:100%;
+            height:100%;
+            background:linear-gradient(to right, #102244, rgb(172, 73, 197));
+            position:absolute;
+            overflow:hidden;
+        }
+        #box1{
+            width: 530px;
+            height: 625px;
+            background-image: url('https://res.cloudinary.com/davims6ce/image/upload/v1597557707/1_pblr2h.png');
+            position: absolute;
+            bottom: 100%;
+            left: 30%;
+            animation: anim 2s forwards, anim2 600s forwards 30000s;
+        }
+        #box1:after{
+            content: '';
+            position: absolute;
+            width: 530px;
+            height: 625px;
+            background-image: url('https://res.cloudinary.com/davims6ce/image/upload/v1597557706/2_meanqt.png');
+            left:0px;
+            z-index:-1;
+        }
+        @keyframes anim{
+            from{
+                bottom: -100%;
+            }
+            to{
+                bottom: 0%;
+            }
+        }
+        @keyframes anim2{
+            from{
+                left:30%;
+                width:530px;
+            }
+            to{
+                width:0px;
+                left:50%;
+            }
+        }
+        #box2{
+            width:auto;
+            height:auto;
+            font-family: 'bahnschrift', sans-serif;
+            color:white;
+            font-size: 10em;
+            font-weight: 500;
+            line-height: 130px;
+            top:250px;
+            left:100px;
+            overflow: hidden;
+        }
+        #text{
+            object-position:relative ;
+            left:100px;
+            animation: anim3 2s forwards 3s;
+        }
+        @keyframes anim3{
+            from{
+                left:-100%
+            }
+            to{
+                left:0%;
+            }
+        }
+        #box3{
+            overflow: hidden;
+        }
+        #container{
+            width: 100%;
+            position: absolute;
+            top:100%;
+            animation: anim4 2s forwards 2.5s;
+        }
+        #logo{
+            float:left;
+            margin-left:100px;
+            margin-top:20px;
+        }
+        #logo img{
+            width:50px;  
+        }
+        #menu{
+            font-family: 'bahnschrift', sans-serif;
+            font-size: 14px;
+            color:white;
+            letter-spacing: 2px;
+            margin-right: 150px;
+            margin-top: 20px;
+            float:right;
+        }
+        #menu ul{
+            list-style: none;
+            color: whitesmoke;
+        }
+        #menu ul li{
+            display: inline-block;
+            margin-left: 100px;
+            background-color:gradient(to right, #0e1014, rgb(25, 28, 31));
+            text-shadow: #050303 0px 0px 10px;
+            color: white;
+            text-transform: uppercase;
+        }
+        @keyframes anim4{
+            from{
+                top:100%;
+            }
+            to{
+                top:0%;
+            }
+        }
+        #custom-button {
+  padding: 10px;
+  color: white;
+  background-color: #009578;
+  border: 1px solid #000;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#custom-button:hover {
+  background-color: #00b28f;
+}
+
+#custom-text {
+  margin-left: 10px;
+  font-family: sans-serif;
+  color: #aaa;
+}
+    </style>
+</head>
+</html>
+<body>
+    <script type="text/javascript">
+    const realFileBtn = document.getElementById("real-file");
+const customBtn = document.getElementById("custom-button");
+const customTxt = document.getElementById("custom-text");
+
+customBtn.addEventListener("click", function() {
+  realFileBtn.click();
+});
+
+realFileBtn.addEventListener("change", function() {
+  if (realFileBtn.value) {
+    customTxt.innerHTML = realFileBtn.value.match(
+      /[\/\\]([\w\d\s\.\-\(\)]+)$/
+    )[1];
+  } else {
+    customTxt.innerHTML = "No file chosen, yet.";
+  }
+});
+</script>
+
+    <div id="main">
+        <div id="box1"></div>
+        <div id="box2">
+        <div id="text">
+             RISE
+             <div id="com" height: 10px>
+             <p>.com</p>
+             </div>
+         </div>
+     </div>
+     </div>
+        <div id="upload button">
+        <button type="button">Upload Resume</button>
+        </div>
+        <div id="box3">
+            <div id="container">
+                <div id="logo">
+                    
+                </div>
+                <div id="menu">
+                    <ul>
+                        <li style="background-color:rgb(226, 90, 215);"><a href="resume formfill.html">Generate resume</a></li>
+                        
+                    </ul>
+            </div>
+
+    </div>
+    <input type="file" id="real-file" hidden="hidden" />
+<button type="button" id="custom-button">CHOOSE A FILE</button>
+<span id="custom-text">No file chosen, yet.</span>
+</body>
