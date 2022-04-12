@@ -128,48 +128,54 @@
                 top:0%;
             }
         }
+    </style>
+    <style>
         #custom-button {
   padding: 10px;
-  color: white;
-  background-color: #009578;
+  color: rgb(44, 23, 23);
+  background-color: #c333e7;
   border: 1px solid #000;
   border-radius: 5px;
   cursor: pointer;
 }
 
 #custom-button:hover {
-  background-color: #00b28f;
+  background-color: #6d16be;
 }
 
 #custom-text {
   margin-left: 10px;
   font-family: sans-serif;
-  color: #aaa;
+  color: rgb(68, 46, 46);
 }
-    </style>
+
+        </style>
 </head>
 </html>
 <body>
+    
+<input type="file" id="real-file" hidden="hidden" />
+    <button type="button" id="custom-button">CHOOSE A FILE</button>
+    <span id="custom-text">No file chosen, yet.</span>
     <script type="text/javascript">
-    const realFileBtn = document.getElementById("real-file");
-const customBtn = document.getElementById("custom-button");
-const customTxt = document.getElementById("custom-text");
-
-customBtn.addEventListener("click", function() {
-  realFileBtn.click();
-});
-
-realFileBtn.addEventListener("change", function() {
-  if (realFileBtn.value) {
-    customTxt.innerHTML = realFileBtn.value.match(
-      /[\/\\]([\w\d\s\.\-\(\)]+)$/
-    )[1];
-  } else {
-    customTxt.innerHTML = "No file chosen, yet.";
-  }
-});
-</script>
-
+        const realFileBtn = document.getElementById("real-file");
+    const customBtn = document.getElementById("custom-button");
+    const customTxt = document.getElementById("custom-text");
+    
+    customBtn.addEventListener("click", function() {
+      realFileBtn.click();
+    });
+    
+    realFileBtn.addEventListener("change", function() {
+      if (realFileBtn.value) {
+        customTxt.innerHTML = realFileBtn.value.match(
+          /[\/\\]([\w\d\s\.\-\(\)]+)$/
+        )[1];
+      } else {
+        customTxt.innerHTML = "No file chosen, yet.";
+      }
+    });
+    </script>
     <div id="main">
         <div id="box1"></div>
         <div id="box2">
@@ -197,7 +203,5 @@ realFileBtn.addEventListener("change", function() {
             </div>
 
     </div>
-    <input type="file" id="real-file" hidden="hidden" />
-<button type="button" id="custom-button">CHOOSE A FILE</button>
-<span id="custom-text">No file chosen, yet.</span>
+    
 </body>
