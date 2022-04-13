@@ -12,4 +12,3 @@ TECH USED:
 -web-scraping (for showing results)
 
 Drive link:https://drive.google.com/drive/folders/1EZhOJmOovM4dZ71RlAaShrLqopOY9xoR?usp=sharing
-![image](https://user-
